@@ -1,16 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
-<body>
+<body style="font-size:20px; padding:50px;">
 
   <% include ../partials/_header %>
 
   <% for (var key in urls) { %>
-  <%=urls[key]%>
+    <table>
+      <tr>
+        <td><%=key %></td>
+        <td> — </td>
+        <td><%=urls[key]%></td>
+        <td> — </td>
+        <td><a href="http://localhost:3000/u/<%= key %>"> ||| FOLLOW NOW!!!||| </a></td>
+        <td> — </td>
+        <td><a href="/urls/<%= key %>/edit">Update URL✄</a></td>
+        <td>
+          <form method="POST" action="/urls/<%= key %>?_method=DELETE">
+            <button type="submit">Delete resource ✄</button>
+          </form>
+        </td>
+      </tr>
+    </table>
   <% } %>
+
+
+
+  <div>
+   <a href="/urls/new">Create a new shortened url.</a>
+  </div>
+
+
 
 </body>
 </html>
 
 
 
+
 <!-- Implement the above template to display 1) a list or table of shortened links, 2) a link to shorten a new URL
+
+
+
+  <body >
+
+  </body>

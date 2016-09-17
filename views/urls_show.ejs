@@ -1,15 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
-<body>
+  <head></head>
+  <body style="font-size:20px; padding:50px;">
+    <% include ../partials/_header %>
 
-  <% include ../partials/_header %>
+    <form action="/urls/<%= shortURL %>?_method=PUT" method="POST" style="margin:150px;">
+        <label for="editedURL">Edit your URL:</label>
+        <input id="editedURL" type="text" name="editedURL" placeholder="http://" value="<%= longURL %>" style="width: 300px">
+        <input type="submit" value="Submit">
+    </form>
 
-  <% for (var key in shortURL) { %>
-  <%=shortURL[key]%>
-  <% } %>
-
-</body>
+  </body>
 </html>
+
+
+
+
+
+
+
+<!--
+<!DOCTYPE html>
+<html lang="en">
+  <head></head>
+  <body style="font-size:20px; padding:50px;">
+    <% include ../partials/_header %>
+
+  </body>
+</html> -->
 
 
 
