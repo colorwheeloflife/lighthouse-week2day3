@@ -4,9 +4,22 @@
   <body style="font-size:20px; padding:50px;">
     <% include ../partials/_header %>
 
-    <form action="/urls/<%= shortURL %>?_method=PUT" method="POST" style="margin:150px;">
+<!--     <a href="HOMEPAGE"></a> -->
+
+    <h3>New ShortURL: <%= url.shortURL %> </h3>
+    <h3>Original LongURL: <%= url.longURL %> </h3>
+
+    <div>
+      <ul><li> <a href="/urls">go to: Home Index</a>
+      </li>
+      <li> <a href="/urls/new">go to: Create a New Shortened URL.</a>
+      </li>
+      </ul>
+    </div>
+
+    <form action="/urls/<%= url.shortURL %>?_method=PUT" method="POST" style="margin:150px;">
         <label for="editedURL">Edit your URL:</label>
-        <input id="editedURL" type="text" name="editedURL" placeholder="http://" value="<%= longURL %>" style="width: 300px">
+        <input id="editedURL" type="text" name="editedURL" placeholder="<%= url.longURL %>" style="width: 300px">
         <input type="submit" value="Submit">
     </form>
 

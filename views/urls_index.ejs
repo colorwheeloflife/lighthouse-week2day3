@@ -3,13 +3,37 @@
 <body style="font-size:20px; padding:50px;">
 
   <% include ../partials/_header %>
+  <link href="css/bootstrap.min.css" rel="stylesheet">
 
-  <% for (var key in urls) { %>
+
+  <% urls.forEach((url) => { %>
+    <p><ul><li><%= url.longURL %> ➟ <a href="http://localhost:3000/u/<%= url.shortURL %>">http://localhost:3000/u/<%= url.shortURL %></a> —
+
+
+      <button type="sumbit"><a href="/urls/<%= url.shortURL %>">Update URL✍</a></button>
+
+      <button type="submit"><form action="/urls/<%= url.shortURL %>?_method=DELETE" method="POST">Delete resource✄
+      </button>
+          </form>
+
+    </li></ul></p>
+  <% }) %>
+
+
+  <div>
+   <a href="/urls/new">Create a new shortened url.</a>
+  </div>
+
+
+
+</body>
+</html>
+<!--   <% for (var key in urls) { %>
     <table>
       <tr>
-        <td><%=key %></td>
+        <td><%= urls[key].shortURL %></td>
         <td> — </td>
-        <td><%=urls[key]%></td>
+        <td><%= urls[key].longURL %></td>
         <td> — </td>
         <td><a href="http://localhost:3000/u/<%= key %>"> ||| FOLLOW NOW!!!||| </a></td>
         <td> — </td>
@@ -21,26 +45,9 @@
         </td>
       </tr>
     </table>
-  <% } %>
-
-
-
-  <div>
-   <a href="/urls/new">Create a new shortened url.</a>
-  </div>
-
-
-
-</body>
-</html>
-
+  <% } %> -->
 
 
 
 <!-- Implement the above template to display 1) a list or table of shortened links, 2) a link to shorten a new URL
 
-
-
-  <body >
-
-  </body>
